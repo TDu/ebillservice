@@ -1,0 +1,16 @@
+UserID;FAMILYNAME;GIVENNAME;COMPANYNAME;ADDRESS1;ADDRESS2;ZIP;CITY;EMAIL;CUSTOMERNBR;ESRCustomerNr;ESRReferenceNr;Status;BCR_AUTH_TOKEN;STATE
+41100000167259665;Mustermann;Max;;Haupstrasse;10;3004;Bern;mustermann@email.com;23758;;;1;;
+41100000258286502;;Kontaktperson;Muster-Firma;Bahnhofstrasse;20;8000;Zürich;kontaktperson@muster-firma.ch;43568;;;1;;
+41010474227997112;Test;Customer;;Strasse;1;8000;Zürich;test.customer@ebill.ch;76258;;;1;0a876f63-fc0f-4ca3-8216-ccb758de7ace;0
+41100000003193574;Testname;Username;;;;;;test.user@mail.ch;;019999997;100000000000000000000000001;2;cb15d317-b99a-41d5-9de2-5917b55410f7;0
+41100000167259665;Mustermann;Max;;Hauptstrasse;10;3004;Bern;;;;;3;;
+41100000258286502;;Kontaktperson;Muster-Firma;;;;;;;;;3;;
+41010474227997112;Test;Customer;;Strasse;1;8000;Zürich;;;;;3;EVID53ESE0D5C78E472BA04C739C82603EAB;3
+41100000003193574;Testname;Username;;;;;;testname@username.com;;;;3;;
+
+
+Erläuterungen:
+CUSTOMERNBR		Beispiel eines Zusatzfeldes, wird nur im Fall von Status 1 ausgeliefert
+BCR_AUTH_TOKEN;STATE	Wird nur ausgeliefert wenn Anmeldung von eBill SIX kommt. Angabe kann ignoriert werden.
+STATE			Wird nur ausgeliefert wenn Anmeldung von eBill SIX kommt. 0=Anmeldung, 3=Abmeldung
+
