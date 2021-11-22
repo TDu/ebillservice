@@ -1,7 +1,7 @@
 # Copyright 2021 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from paynet import paynet
+from ebillservice import ebillservice
 import logging.config
 
 # Setup debug logging for Zeep
@@ -28,5 +28,5 @@ logging.config.dictConfig({
     }
 })
 
-p = paynet.Paynet("https://ebill-ki.postfinance.ch/B2BService/B2BService.svc", True)
+p = ebillservice.EbillService("https://ebill-ki.postfinance.ch/B2BService/B2BService.svc", True)
 p.ping()

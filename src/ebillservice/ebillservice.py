@@ -9,7 +9,7 @@ SSL_CERTIF = os.path.join(os.path.dirname(__file__), "certificates", "SwissSign_
 WSDL_DOC = os.path.join(os.path.dirname(__file__), "wsdl", "b2bservice.wsdl")
 
 
-class Paynet:
+class EbillService:
     def __init__(self, url, test_service):
         self.use_test_service = True
         settings = zeep.Settings(xml_huge_tree=True)
