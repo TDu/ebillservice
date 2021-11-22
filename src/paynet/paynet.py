@@ -1,3 +1,6 @@
+# Copyright 2021 Camptocamp SA
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
+
 import os
 import requests
 import zeep
@@ -14,6 +17,8 @@ class Paynet:
         session.verify = SSL_CERTIF
         transport = zeep.transports.Transport(session=session)
         self.client = zeep.Client(WSDL_DOC, transport=transport, settings=settings)
+        self.service = self.client.create_service("{http://ch.swisspost.ebill.b2bservice}UserNamePassword", url)
 
     def ping(self):
-        print("Ping")
+        print("Call ExecutePing method")
+        self.service.ExecutePing("yellow", None, False, False)
