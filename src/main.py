@@ -28,5 +28,8 @@ logging.config.dictConfig({
     }
 })
 
-p = ebillservice.EbillService("https://ebill-ki.postfinance.ch/B2BService/B2BService.svc", True)
+username = "username"
+password = "password"
+
+p = ebillservice.EbillService("https://ebill-ki.postfinance.ch/B2BService/B2BService.svc", True, username, password)
 p.ping()
