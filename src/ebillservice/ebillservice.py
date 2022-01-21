@@ -36,15 +36,29 @@ class EbillService:
             data = f.read()
         return base64.b64encode(data.encode("utf-8"))
 
-
     def upload_files(self):
         data = self.get_invoice_data()
         invoice_type = self.client.get_type("ns2:Invoice")
         array_invoice_type = self.client.get_type("ns2:ArrayOfInvoice")
-        invoice = invoice_type(FileType="EAI.XML", TransactionID="8201374290834", Data=data)
+        invoice = invoice_type(FileType="EAI.XML", TransactionID="A00002", Data=data)
         invoices = array_invoice_type(invoice)
-        self.service.UploadFilesReport(
+        res = self.service.UploadFilesReport(
             BillerID="41101000001021209",
             invoices=invoices
         )
-        # TODO get return data especially processing state...
+        print(res)
+
+    def search_invoices(self):
+        parameter_type = self.client.get_type("ns2:SearchInvoiceParameter")
+        parameters = parameter_type(BillerID="41101000001021209", TransactionID="A00002")
+        res = self.service.SearchInvoices(
+            Parameter=parameters
+        )
+        print(res)
+
+    def get_invoice_list(self):
+        res = self.service.GetInvoiceListBiller(
+            BillerID="41101000001021209",
+            ArchiveData=True,
+        )
+        print(res)
